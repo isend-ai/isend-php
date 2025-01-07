@@ -32,14 +32,28 @@ require_once '/path/to/isend-php/init.php';
 Simple usage looks like:
 
 ```php
-$is = new iSend('is_test_BQokikJOvBiI2HlWgH4olfQ2');
-$email = $is->emails->send([
+$iSend = new iSend('is_test_BQokikJOvBiI2HlWgH4olfQ2');
+$email = $iSend->emails->send([
+    'to' => 'hi@isend.ai',
+    'name' => 'welcome_emailer',
+]);
+echo $email;
+```
+To create email template signup at [isend.ai](https://www.isend.ai) and navigate to emails > create
+
+To send raw email with subject and body:
+
+```php
+$iSend = new iSend('is_test_BQokikJOvBiI2HlWgH4olfQ2');
+$email = $iSend->emails->sendRaw([
     'to' => 'hi@isend.ai',
     'subject' => 'Welcome to iSend',
     'body' => 'Welcome Test Send Email',
 ]);
 echo $email;
 ```
+
+
 
 ## Dependencies
 
